@@ -1,0 +1,99 @@
+" BASICS
+
+" Disable vi compatibility which can cause unexpected issues.
+set nocompatible
+
+" Enable file type detection.
+filetype on
+
+" Enable plugins and load plugin for the detected file type.
+filetype plugin on
+
+" Load an indent file for the detected file type.
+filetype indent on
+
+" Turn syntax highlight on.
+syntax on
+
+" Add numbers to line.
+set number
+
+" Highlight cursor line underneath the cursor horizontally.
+set cursorline
+
+" Highlight cursor line underneath the cursor vertically
+set cursorcolumn
+
+set encoding=UTF-8
+
+set shiftwidth=4 " Set shift width to 4 spaces.
+set tabstop=4 " Set tab width to 4 columns.
+set expandtab " Use space characters instead of tabs.
+set nobackup " Do not save backup files.
+set scrolloff=10 " Do not let cursor scroll below or above N number of lines when scrolling.
+set nowrap " Do not wrap lines. Allow long lines to extend as far as the line goes.
+set incsearch " While searching though a file incrementally highlight matching characters as you type.
+set ignorecase " Ignore capital letters during search.
+set smartcase " This will allow you to search specifically for capital letters.
+set showcmd " Show partial command you type in the last line of the screen.
+set showmode " Show the mode you are on the last line.
+set showmatch " Show matching words during a search.
+set hlsearch " Use highlighting when doing a search.
+set history=1000 " Set the commands to save in history default number is 20.
+
+" /BASICS
+
+" Plugins
+call plug#begin('~/.vim/plugged')
+" Colorize brackets, parenthesis, etc.
+Plug 'frazrepo/vim-rainbow'
+" Show folder tree view.
+Plug 'preservim/nerdtree'
+Plug 'Xuyuanp/nerdtree-git-plugin'
+Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
+Plug 'PhilRunninger/nerdtree-visual-selection'
+" Better info.
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+" Multiline comments.
+Plug 'preservim/nerdcommenter'
+" File Search.
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
+" Search
+Plug 'mileszs/ack.vim'
+" Programing languages support
+Plug 'sheerun/vim-polyglot'
+" Autopair
+Plug 'jiangmiao/auto-pairs'
+" Surround anyting
+Plug 'tpope/vim-surround'
+"Plug 'ryanoasis/vim-devicons'
+Plug 'benmills/vimux'
+Plug 'christoomey/vim-tmux-navigator'
+Plug 'leafOfTree/vim-vue-plugin'
+call plug#end()
+
+let g:rainbow_active = 1
+
+let mapleader = ' '
+
+" Remap esc key to jj in insert mode.
+inoremap jj <esc>
+
+" Remap last cursor position
+nnoremap <leader>\ ``
+
+" NERDTree
+nnoremap <leader>nt :NERDTree<CR>
+
+" loading the plugin
+let g:webdevicons_enable = 1
+" adding the flags to NERDTree
+let g:webdevicons_enable_nerdtree = 1
+" adding to vim-airline's tabline
+let g:webdevicons_enable_airline_tabline = 1
+" adding to vim-airline's statusline
+let g:webdevicons_enable_airline_statusline = 1
+" ctrlp glyphs
+let g:webdevicons_enable_ctrlp = 1
